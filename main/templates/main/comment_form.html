@@ -1,0 +1,15 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+    <form action="" method="post" class="form">
+        {% csrf_token %}
+        <div class="form-field">
+            {{ form.text }}
+        </div>
+        <div class="form-field form-field--submit">
+            <button type="submit" class="round-button">こめんと
+                <a href="{% url 'home'  %}"></a>
+            </button>
+        </div>
+    </form>
+{% endblock %}

@@ -22,6 +22,9 @@
         <div class="post__like">
             <a class="like{% if post in user.like.all %} like--active{% endif %}" data-pk="{{post.pk}}"><i class="fas fa-heart"></i></a>
         </div>
+        <div class="comment-button" role="button">
+            <a href="{% url 'comment' post.pk %}"><i class="far fa-comment fa-lg"></i></i></a>
+        </div>
         <div class="post__user">
             <a href="{% url 'profile' post.user.pk %}" class="user">
                 <img src="{{ post.user.icon_url }}">
@@ -31,6 +34,20 @@
     </div>
     <div class="post__body">
         {{ post.note }}
+    </div>
+    <h3>コメント</h3>
+    <div class="post__comments">
+        {% for comments in post.comments.all %}
+            <div class="post__response">
+                <div>
+                    <img src="{{ comments.user.icon_url }}" alt="ユーザーアイコン">
+                    <span>{{ comments.user.username }}</span>
+                </div>
+                <div>{{ comments.text }}</div>
+                <div>{{ comments.post_date }}</div>
+                <hr>
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

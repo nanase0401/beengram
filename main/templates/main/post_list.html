@@ -12,7 +12,7 @@
         </div>
         <div class="tab{% if 'follow' in request.GET %} tab--active{% endif %}">
             <a href="{% url 'home' %}?follow" class="tab__link">
-                <span class="tab__label">follow</span>
+                <span class="tab__label">follow</span> 
             </a>
         </div>
     </div>
@@ -44,6 +44,9 @@
             <div class="post__actions">
                 <div class="post__like">
                     <a class="like{% if post in user.like.all %} like--active{% endif %}" data-pk="{{post.pk}}"><i class="fas fa-heart"></i></a>
+                </div>
+                <div class="comment-button" role="button">
+                    <a href="{% url 'comment' post.pk %}"><i class="far fa-comment fa-lg"></i></a>
                 </div>
                 <div class="post__user">
                     <a href="{% url 'profile' post.user.pk %}" class="user">

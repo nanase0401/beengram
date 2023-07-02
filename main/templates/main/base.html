@@ -11,16 +11,16 @@
         {% block extra_style %}{% endblock %}
     </head>
     <body>
-        {# header #}
-        {% block header %}{% include "main/header.html" %}{% endblock %}
+            {# header #}
+            {% block header %}{% include "main/header.html" %}{% endblock %}
 
-        <main id="content">
-            {% block content %}{% endblock %}
-        </main>
+            <main id="content">
+                {% block content %}{% endblock %}
+            </main>
 
-        {# footer #}
-        {% block footer %}{% include "main/footer.html" %}{% endblock %}
+            {# footer #}
+            {% block footer %}{% include "main/footer.html" %}{% endblock %}
 
-        {% block extra_js %}{% endblock %}
+            {% block extra_js %}{% endblock %}
     </body>
 </html>
